@@ -23,7 +23,18 @@
       el: document.querySelector("#editor"),
       previewStyle: "vertical",
       height: "500px",
-      //   initialValue: content,
+      events: {
+        change: test,
+      },
     });
+
+    function test(e) {
+      const text = editor.getHTML().replaceAll("<p>", "");
+      const text2 = text.replaceAll("</p>", "");
+      const text3 = text2.replaceAll("<ul>", "");
+      const text4 = text3.replaceAll("</ul>", "");
+
+      console.log(text4);
+    }
   </script>
 </html>
